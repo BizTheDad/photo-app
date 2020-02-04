@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <%= link_to 'PhotoApp', root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to 'Link', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Link', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Link', root_path, class: "nav-link" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+              edit_user_registration_path, title: 'Edit Profile', class: 'nav-link mr-2' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to('Logout', destroy_user_session_path,
+              class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

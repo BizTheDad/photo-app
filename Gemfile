@@ -6,6 +6,7 @@ ruby '2.6.3'
 # We're using Devise for authentication
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
