@@ -1,1 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+.jumbotron {
+  text-align: center;
+  background-image: asset-url('oliver-pecker-HONJP8DyiSM-unsplash.jpg');
+  background-size: cover;
+  color: #fff;
+  font-stretch: expanded;
+}

@@ -1,2 +1,60 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<% if current_user %>
+  <h3>Welcome: <%= current_user.email %></h3>
+<% else %>
+  <div class="jumbotron">
+    <h2>Welcome to the Photo Management App!</h2>
+    <p class="lead">
+      You'll love managing your Photos with our application. Sign up!
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="container">
+      <div class="col">
+        <div class="card-deck">
+
+          <div class="card">
+            <div class="card-header text-center bg-dark text-white">
+              <h2>Premium Plan</h2>
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <h4>Price: $10</h4>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-secondary">Unlimited Image Uploads</li>
+              <li class="list-group-item list-group-item-secondary">Responsive design</li>
+              <li class="list-group-item list-group-item-secondary">Access anywhere</li>
+              <li class="list-group-item list-group-item-secondary">Unlimited projects</li>
+            </ul>
+            <div class="card-footer">
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-block' %>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header text-center bg-dark text-white"">
+              <h2>Amaze Plan</h2>
+            </div>
+            <div class="card-body ">
+              <div class="card-text">
+                <h4>Price: $10</h4>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-secondary">Unlimited Image Uploads</li>
+              <li class="list-group-item list-group-item-secondary">Responsive design</li>
+              <li class="list-group-item list-group-item-secondary">Access anywhere</li>
+              <li class="list-group-item list-group-item-secondary">Unlimited projects</li>
+            </ul>
+            <div class="card-footer">
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-block' %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
